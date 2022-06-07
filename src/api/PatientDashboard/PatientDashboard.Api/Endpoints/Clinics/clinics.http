@@ -1,0 +1,3 @@
+### Get all clinics
+GET https://localhost:7286/clinics
+Accept: application/json
