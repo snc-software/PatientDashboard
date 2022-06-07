@@ -3,7 +3,7 @@ using PatientDashboard.Domain;
 
 namespace PatientDashboard.Data.Mappings;
 
-public class ClinicDataMapper : ClassMap<ClinicModel>
+public sealed class ClinicDataMapper : ClassMap<ClinicModel>
 {
     public ClinicDataMapper()
     {

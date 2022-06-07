@@ -16,13 +16,23 @@ public class ClinicRetrieverTests
     IEnumerable<ClinicModel> _clinics;
 
     [TestMethod]
-    public void GetAsyncRetrievesAllTheClinics()
+    public void GetAllReadsAllTheRecordsFromTheCsv()
+    {
+        _ = _retriever.GetAll();
+        
+        _mockCsvReaderWrapper
+            .Verify(m => m.GetRecords<ClinicModel, ClinicDataMapper>(
+                It.IsAny<StreamReader>()),Times.Once);
+    }
+    
+    [TestMethod]
+    public void GetAllReturnsAllTheClinics()
     {
         var actualClinics = _retriever.GetAll();
 
         actualClinics.Should().BeEquivalentTo(_clinics);
     }
-    
+
     #region Supporting Code
 
     [TestInitialize]
