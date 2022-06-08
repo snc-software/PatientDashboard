@@ -117,7 +117,7 @@ function Home() {
   return (
     <>
       <Container>
-        <FormControl fullWidth>
+        <FormControl fullWidth sx={{ m: 2 }}>
           <InputLabel id="clinic-select-label">Clinic</InputLabel>
           <Select
             labelId="clinic-select-label"
@@ -136,13 +136,12 @@ function Home() {
             })}
           </Select>
         </FormControl>
-
         {isBusy && <Busy data-testid="busyindicator" />}
         {errorResponse && (
           <ErrorText data-testid="errormessage">{errorResponse}</ErrorText>
         )}
         {patients && patients.length > 0 && (
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} sx={{ m: 2 }}>
             <Table>
               <TableHead>
                 <TableRow>
